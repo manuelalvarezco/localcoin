@@ -1,0 +1,28 @@
+<mat-toolbar color="primary" class="d-flex bd-highlight animated fadeIn fast">
+
+
+    <div class="mr-auto bd-highlight">
+        <a [routerLink]="['/home']">
+            <button mat-icon-button aria-label="back">
+                        <mat-icon>arrow_back</mat-icon>
+                    </button>
+        </a>
+
+
+    </div>
+
+    <div class="mr-auto bd-highlight">
+        {{titulo}}
+    </div>
+
+    <div class="bd-highlight d-md-none d-lg-none">
+        <a [routerLink]="['/search']">
+            <button mat-icon-button aria-label="search">
+                    <mat-icon>search</mat-icon>
+                </button>
+        </a>
+
+    </div>
+
+
+</mat-toolbar>

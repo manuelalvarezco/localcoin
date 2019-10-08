@@ -1,0 +1,38 @@
+a {
+    color: #ffffff;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+.example-form {
+    min-width: 150px;
+    width: 100%;
+}
+
+.mat-form-field {
+    width: 288px;
+}
+
+@media only screen and (max-width: 390px) {
+    .example-form {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 390px) {
+    .buscador {
+        display: none;
+    }
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}

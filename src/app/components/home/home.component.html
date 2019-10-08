@@ -1,101 +1,59 @@
-<mat-sidenav-container>
+<mat-sidenav-container class="animated fadeIn fast">
     <mat-sidenav #sidenav [(opened)]="opened" mode="push">
-        <button (click)="sidenav.close()" mat-icon-button aria-label="Example icon-button with a heart icon">
-                    <mat-icon>close</mat-icon>
-                  </button>
+        <mat-card-header class="mt-2 ml-2">
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Manuel Alvarez</mat-card-title>
+            <mat-card-subtitle>
+                <a style="color: #000" [routerLink]="['/perfil']">Ver tu perfil</a>
+            </mat-card-subtitle>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-list>
+            <mat-list-item>
+                <mat-icon color="primary" mat-list-icon>store_mall_directory</mat-icon>
+                <h4 mat-line>
+                    <a style="color: #000" [routerLink]="['/perfil']">Mis tiendas</a>
+                </h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon color="warn" mat-list-icon>all_out</mat-icon>
+                <h4 mat-line>
+                    <a style="color: #000" [routerLink]="['/perfil']">Mis cupones</a>
+                </h4>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon color="#000" mat-list-icon>folder</mat-icon>
+                <h4 mat-line>
+                    <a style="color: #000" [routerLink]="['/login']">Salir</a>
+                </h4>
+            </mat-list-item>
+        </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>
-
-
-
-        <mat-toolbar class="d-flex bd-highlight">
-
-
+        <mat-toolbar color="primary" class="d-flex bd-highlight ">
             <div class="mr-auto bd-highlight">
-                <img (click)="opened=!opened" style="width:40px; height: 40px; border-radius: 50%; " src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="usuario">
+                <button (click)="opened=!opened" mat-icon-button aria-label="Example icon-button with a heart icon">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+            <div class="ml-auto">
+                <a [routerLink]="['/favorites']">
+                    <button mat-button>Favoritos</button>
+                </a>
             </div>
             <div class="bd-highlight">
-                <button mat-icon-button aria-label="Example icon-button with a heart icon" (click)="openDialog()">
+                <img src="https://getbootstrap.com/docs/4.3/assets/brand/bootstrap-solid.svg" alt="">
+            </div>
+            <div class="bd-highlight">
+                <a [routerLink]="['/search']">
+                    <button mat-icon-button aria-label="search">
                         <mat-icon>search</mat-icon>
-                      </button>
-
-
+                    </button>
+                </a>
             </div>
-            <div class="bd-highlight">
-                <button mat-icon-button color="warn" aria-label="Example icon-button with a heart icon">
-                <mat-icon>favorite</mat-icon>
-              </button>
-
-            </div>
-            <div class="bd-highlight">
-                <button mat-icon-button aria-label="Example icon-button with a heart icon" (click)="openDialog()">
-                        <mat-icon>more_vert</mat-icon>
-                      </button>
-
-            </div>
-
         </mat-toolbar>
-
-        <mat-card class="example-card">
-            <mat-card-header>
-                <div mat-card-avatar class="example-header-image">
-                    <img style="width:40px; height: 40px; border-radius: 50%; " src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="usuario">
-                </div>
-                <mat-card-title>Shiba Inu</mat-card-title>
-                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-                <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-                </p>
-            </mat-card-content>
-            <mat-card-actions>
-                <div class="d-flex bd-highlight mb-3">
-
-                    <button type="button" class="btn btn-warning mr-auto p-2 bd-highlight">Ver locales</button>
-
-
-                    <button mat-icon-button color="warn" aria-label="Example icon-button with a heart icon" (click)="favorite('Agregado a favoritos')">
-                    <mat-icon>favorite</mat-icon>
-                  </button>
-
-
-                </div>
-
-            </mat-card-actions>
-        </mat-card>
-        <mat-card class="example-card">
-            <mat-card-header>
-                <div mat-card-avatar class="example-header-image">
-                    <img style="width:40px; height: 40px; border-radius: 50%; " src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="usuario">
-                </div>
-                <mat-card-title>Shiba Inu</mat-card-title>
-                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-                <p>
-                    The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.
-                </p>
-            </mat-card-content>
-            <mat-card-actions>
-                <div class="d-flex bd-highlight mb-3">
-
-                    <button type="button" class="btn btn-warning mr-auto p-2 bd-highlight">Ver locales</button>
-
-
-                    <button mat-icon-button color="warn" aria-label="Example icon-button with a heart icon" (click)="favorite('Agregado a favoritos')">
-                    <mat-icon>favorite</mat-icon>
-                  </button>
-
-
-                </div>
-
-            </mat-card-actions>
-        </mat-card>
-
-
-
+        <div class="container">
+            <app-ciudades></app-ciudades>
+        </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
