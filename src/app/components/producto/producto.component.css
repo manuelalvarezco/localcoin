@@ -6,3 +6,16 @@
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
 }
+
+.mat-card {
+    padding: 0;
+}
+
+.mat-card-header {
+    padding: 16px 0 0 16px;
+}
+
+.mat-card-actions,
+.mat-card-content {
+    padding: 0px 16px 0;
+}
